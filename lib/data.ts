@@ -1,7 +1,10 @@
 import React from "react";
-import { WorkflowIcon } from "lucide-react";
-import { ComputerIcon } from "lucide-react";
-import { GraduationCapIcon } from "lucide-react";
+import { 
+  WorkflowIcon, 
+  ComputerIcon,
+  GraduationCapIcon,
+  ConstructionIcon
+} from "lucide-react";
 // import corpcommentImg from "@/public/corpcomment.png";
 // import rmtdevImg from "@/public/rmtdev.png";
 // import wordanalyticsImg from "@/public/wordanalytics.png";
@@ -35,20 +38,20 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
+    title: "Graduated from James Madison Universitry",
     location: "Miami, FL",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "Graduated from JMU with a BS in Geology and a Math minor.",
     icon: React.createElement(GraduationCapIcon),
-    date: "2019",
+    date: "2016",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Quality Control",
+    location: "All along the east coast",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-    icon: React.createElement(WorkflowIcon),
-    date: "2019 - 2021",
+      "I worked as an on-site material tester for a commercial construction company.",
+    icon: React.createElement(ConstructionIcon),
+    date: "2016 - 2017",
   },
   {
     title: "Full-Stack Developer",
@@ -62,46 +65,45 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "YakBots",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: '/',
+      "App that allowed for users to upload documents in Monday, build chatbots based on those documents and then give access to the bot through a slack channel.",
+    tags: ["Monday.com", "Slack", "AWS", "Python", "Supabase", "OpenAI", "Langchain", "Pinecone"],
+    imageUrl: '/yakbots.png',
   },
   {
-    title: "rmtDev",
+    title: "ChatGPT for HubSpot",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: '/',
+      "When ChatGPT first came out, I built the first HubSpot marketplace app to allow basic access to ChatGPT from withing HubSpot. This app currently has over 1k downloads.",
+    tags: ["Retool", "Python", "AWS", "Supabase", "OpenAI", "ChatGPT"],
+    imageUrl: '/chatgpt_hubspot.png',
   },
   {
-    title: "Word Analytics",
+    title: "GPT from Scratch",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: '/',
+      "Working through the Karpathy lecture series to build micrograd and a GPT from scratch - In progress",
+    tags: ["Python", "AI", "Machine Learning"],
+    imageUrl: '/karpathy.png',
+  },
+  {
+    title: "Proposal Up",
+    description:
+      "App that can take an Upwork job description and generate a proposal based on the user's skills - In progress",
+    tags: ["Next.js", "Supabase", "OpenAI", "Langchain"],
+    imageUrl: '/proposal_up.png',
   },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Git",
-  "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
+  "Leadership",
+  "Business Process Strategy",
   "Python",
-  "Django",
-  "Framer Motion",
+  "Salesforce",
+  "HubSpot",
+  "Monday.com",
+  "LLMs",
+  "Data Engineering",
+  "SQL",
+  "Postgres",
+  "Next.js"
 ] as const;
