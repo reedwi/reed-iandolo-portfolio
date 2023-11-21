@@ -6,6 +6,7 @@ import ActiveSectionContextProvider from '@/context/active-section-context'
 import Header from '@/components/header'
 import Footer from '@/components/footer'
 import { ModeToggle } from '@/components/mode-toggle'
+import { Analytics } from '@vercel/analytics/react';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -35,6 +36,7 @@ export default function RootLayout({
           <ActiveSectionContextProvider>
             <Header />
             {children}
+            <Analytics />
             <Footer />
             <ModeToggle />
           </ActiveSectionContextProvider>
