@@ -1,4 +1,5 @@
 import React from "react";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
       </small>
       <p className="text-xs">
         <span className="font-semibold">About this website:</span> built with
-        React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS,
+        Next.js, TypeScript, Tailwind CSS,
         Framer Motion, Vercel hosting.
       </p>
     </footer>

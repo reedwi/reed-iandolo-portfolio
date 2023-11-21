@@ -1,7 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
+html {
+  --line-color: #e5e7eb;
+}
+
+html.dark {
+  --line-color: rgba(255, 255, 255, 0.2);
+}
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -73,4 +85,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.vertical-timeline--animate .vertical-timeline-element-content.is-hidden {
+  display: block !important;
 }
