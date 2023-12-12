@@ -124,6 +124,14 @@ export const projectsData = [
     link: "https://ecosystem.hubspot.com/marketplace/apps/sales/sales-enablement/the-obo-group-chatgpt-1398072"
   },
   {
+    title: "Advent of Code 2023",
+    description:
+      "Advent of code (adventofcode.com) is a set of problems, released each day in December. - In progress",
+    tags: ["Python", "Data Structures", "Algorithms"],
+    imageUrl: '/aoc.png',
+    link: "https://github.com/reedwi/advent-of-code-2023/tree/master"
+  },
+  {
     title: "GPT from Scratch",
     description:
       "Working through the Karpathy lecture series to build micrograd and a GPT from scratch - In progress",
