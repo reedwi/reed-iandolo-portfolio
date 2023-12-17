@@ -118,7 +118,7 @@ export const projectsData = [
   {
     title: "ChatGPT for HubSpot",
     description:
-      "When ChatGPT first came out, I built the first HubSpot marketplace app to allow basic access to ChatGPT from withing HubSpot. This app currently has over 1k downloads.",
+      "When ChatGPT first came out, I built the first HubSpot marketplace app to allow basic access to ChatGPT from within HubSpot. This app currently has over 1k downloads.",
     tags: ["Retool", "Python", "AWS", "Supabase", "OpenAI", "ChatGPT"],
     imageUrl: '/chatgpt_hubspot.png',
     link: "https://ecosystem.hubspot.com/marketplace/apps/sales/sales-enablement/the-obo-group-chatgpt-1398072"
