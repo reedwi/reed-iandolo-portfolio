@@ -1,19 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Hanken_Grotesk } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from "@/components/theme-provider"
-import ActiveSectionContextProvider from '@/context/active-section-context'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
-import { ModeToggle } from '@/components/mode-toggle'
 import { Analytics } from '@vercel/analytics/react';
 
-
-const inter = Inter({ subsets: ['latin'] })
+const sans = Hanken_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+})
 
 export const metadata: Metadata = {
-  title: 'Reed Iandolo | Personal Portfolio',
-  description: 'Reed Iandolo is a technology leader with experience in the technical consulting space.',
+  title: 'Reed Iandolo | VP of Technology',
+  description:
+    'Reed Iandolo is VP of Technology at Aptitude 8 and an independent technical advisor. He helps teams get the most out of their core systems and builds the custom 10% those systems can\'t cover.',
 }
 
 export default function RootLayout({
@@ -22,24 +22,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <body
-        className={`${inter.className} bg-gray-50 text-gray-950 relative pt-28 sm:pt-36 dark:bg-gray-900 dark:text-gray-50 dark:text-opacity-90`}
-      >
-        <div className="bg-[#fbe2e3] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
-        <div className="bg-[#dbd7fb] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
+    <html lang="en" className={sans.variable} suppressHydrationWarning>
+      <body>
         <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            disableTransitionOnChange
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          <ActiveSectionContextProvider>
-            <Header />
-            {children}
-            <Analytics />
-            <Footer />
-            <ModeToggle />
-          </ActiveSectionContextProvider>
+          {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

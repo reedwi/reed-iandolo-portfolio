@@ -1,20 +1,184 @@
-import About from "@/components/about";
-import Experience from "@/components/experience";
-import Intro from "@/components/intro";
-import Projects from "@/components/projects";
-import SectionDivider from "@/components/section-divider";
-import Skills from "@/components/skills";
+import Image from "next/image";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { capabilities, cases, proof, contact } from "@/lib/data";
 
+const mailto = `mailto:${contact.email}?subject=Hello%20Reed`;
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center px-4">
-      <Intro />
-      <SectionDivider />
-      <About />
-      <Projects />
-      <Skills />
-      <Experience />
-    </main>
-  )
+    <div className="wrap">
+      <div className="bar">
+        <div className="brand">
+          <Image
+            className="avatar"
+            src="/reed_headshot.png"
+            alt="Reed Iandolo"
+            width={84}
+            height={84}
+            quality={90}
+            priority
+          />
+          <div>
+            <b>Reed Iandolo</b>
+            <span>VP of Technology · Aptitude 8</span>
+          </div>
+        </div>
+        <div className="right">
+          <span className="avail">
+            <span className="pulse" /> Washington, DC · Remote
+          </span>
+          <ThemeToggle />
+        </div>
+      </div>
+
+      <header className="hero">
+        <span className="eyebrow">VP of Technology · Aptitude 8</span>
+        <h1>
+          I lead how we <em>architect, sell, and deliver</em>, and how we put AI
+          to work doing all three better.
+        </h1>
+        <p>
+          I run the technology organization at Aptitude 8, a go-to-market systems
+          consultancy. We&apos;re the partner companies bring in to make their
+          sales, marketing, and service tools actually work, from strategy through
+          implementation. My side spans pre-sales, solution engineering,
+          development, and internal product. Lately, most of my energy goes into
+          putting AI directly into how we build.
+        </p>
+        <div className="cta-row">
+          <a className="btn" href={mailto}>
+            Get in touch
+          </a>
+          <a className="btn ghost" href={contact.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a className="btn ghost" href={contact.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <a className="btn ghost" href={contact.substack} target="_blank" rel="noreferrer">
+            Substack
+          </a>
+          <a className="btn ghost" href={contact.resume} target="_blank" rel="noreferrer">
+            Resume
+          </a>
+        </div>
+      </header>
+
+      <section className="block">
+        <div className="block-head">
+          <h2>What I&apos;m good at</h2>
+          <span className="note">the short version</span>
+        </div>
+        <p className="block-intro">
+          A quick primer: the things I do well and genuinely enjoy, with a bit of
+          where I&apos;ve proven them out at Aptitude 8.
+        </p>
+        <div className="caps">
+          {capabilities.map((c) => (
+            <div className="cap" key={c.title}>
+              <b>{c.title}</b>
+              <p>
+                {c.body}
+                {c.ev ? <> <span className="ev">{c.ev}</span></> : null}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="thesis">
+        <span className="eyebrow">Advisory · what I&apos;m building toward</span>
+        <h2>
+          The real shift isn&apos;t rebuilding your core systems. It&apos;s
+          finally building the <em>10%</em> they can&apos;t do.
+        </h2>
+        <p>
+          There&apos;s a lot of noise about building your own CRM, or any core
+          system, from scratch. It usually gets framed as saving on licensing,
+          with AI as the thing that finally makes it cheap enough to try. In
+          theory, sure. In practice, I&apos;ve never once seen it pay off.
+        </p>
+
+        <div className="cases">
+          {cases.map((c) => (
+            <div className="case" key={c.label}>
+              <div className="case-lbl">{c.label}</div>
+              <p>{c.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <p>
+          So the move is almost always the same:{" "}
+          <strong>
+            trust the core system, get everything you can out of it, and
+            purpose-build only the piece that genuinely can&apos;t live inside it
+          </strong>
+          . That last part is where AI truly changes the math. The adjacent tool
+          that used to take forever to build, cost a fortune, or mean a six-figure
+          add-on is now something you can actually build.
+        </p>
+
+        <p>
+          As a <strong>trusted advisor</strong>, the real skill is knowing where
+          that line is. First I help your team push the system to its limits, so
+          you&apos;re getting every bit of ROI it can actually give. That&apos;s
+          usually further than people expect, and it&apos;s the honest way to find
+          the true edge of the platform. Then, and only then, I build what lives
+          beyond it: sometimes an AI feature that couldn&apos;t exist before,
+          sometimes software that finally got cheap enough to be worth it.
+        </p>
+
+        <div className="split">
+          <div className="s90">90%</div>
+          <div className="s10">10%</div>
+        </div>
+        <div className="split-legend">
+          <span className="l">what the core system already does well</span>
+          <span className="r">the part I build ↑</span>
+        </div>
+
+        <div className="proof">
+          {proof.map((p) => (
+            <div className="pf" key={p.tag}>
+              <div className="tag">{p.tag}</div>
+              <p>
+                <b>{p.strong}</b> {p.rest}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="invite">
+          <div className="txt">
+            <b>I&apos;m actively expanding this.</b> If your software gets you most
+            of the way and the last 10% is quietly costing you, that&apos;s exactly
+            the conversation I want.
+          </div>
+          <a className="btn" href={mailto}>
+            Let&apos;s talk →
+          </a>
+        </div>
+      </section>
+
+      <footer className="site">
+        <div className="foot-links">
+          <a href={mailto}>Email</a>
+          <a href={contact.linkedin} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <a href={contact.github} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a href={contact.substack} target="_blank" rel="noreferrer">
+            Substack
+          </a>
+          <a href={contact.resume} target="_blank" rel="noreferrer">
+            Resume
+          </a>
+        </div>
+        <div className="foot-meta">Reed Iandolo · © 2026</div>
+      </footer>
+    </div>
+  );
 }

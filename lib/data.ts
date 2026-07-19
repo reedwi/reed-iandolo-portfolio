@@ -1,164 +1,65 @@
-import React from "react";
-import { 
-  WorkflowIcon, 
-  ComputerIcon,
-  GraduationCapIcon,
-  ConstructionIcon,
-  TestTube2Icon,
-  NetworkIcon
-} from "lucide-react";
+export const contact = {
+  email: "riandolo103@gmail.com",
+  linkedin: "https://www.linkedin.com/in/reed-iandolo-341623163/",
+  github: "https://github.com/reedwi",
+  substack:
+    "https://substack.com/@riandolo?r=1mjadv&utm_campaign=profile&utm_medium=profile-page",
+  resume: "/reed_iandolo_resume.pdf",
+} as const;
 
-export const links = [
+export const capabilities = [
   {
-    name: "Home",
-    hash: "#home",
+    title: "Systems architecture",
+    body: "Designing how the pieces fit together: CRM platforms, custom integrations, portals, UI extensions, coded actions.",
+    ev: "The technical spine of client solutions.",
   },
   {
-    name: "About",
-    hash: "#about",
+    title: "Framing hard problems",
+    body: "Scoping aggressive, high-stakes migrations so they actually land.",
+    ev: "I built the framework my team uses on enterprise deals.",
   },
   {
-    name: "Projects",
-    hash: "#projects",
+    title: "Leading builders",
+    body: "Running pre-sales, solution engineering, and development teams, and moving them to AI-assisted delivery.",
+    ev: "Same effort, sharper and more consistent output.",
   },
   {
-    name: "Skills",
-    hash: "#skills",
+    title: "Putting AI to work for real",
+    body: "Not AI theater. Rolled Claude out org-wide and took daily use from ~50% to 90%+, then started embedding it into how we deliver.",
+    ev: "Now a company growth vector.",
   },
   {
-    name: "Experience",
-    hash: "#experience",
-  }
-] as const;
-
-export const experiencesData = [
-  {
-    title: "Graduated from JMU",
-    location: "Harrisonburg, VA",
-    company: null,
-    description:
-      "Graduated from James Madison University with a BS in Geology and a Math minor.",
-    icon: React.createElement(GraduationCapIcon),
-    date: "2012 - 2016",
+    title: "Building the missing piece",
+    body: "Stood up an internal product team to build the tooling, skills, and plugins that fill the gaps standard SaaS leaves behind.",
+    ev: "",
   },
   {
-    title: "Quality Controller",
-    location: "East Coast",
-    company: "GeoStructures",
-    description:
-      "I worked as an on-site material tester for a commercial construction company.",
-    icon: React.createElement(TestTube2Icon),
-    date: "2016 - 2017",
-  },
-  {
-    title: "Project Manager",
-    company: "Garrison Homes",
-    location: "Lewes, DE",
-    description:
-      "Responsible for end-to-end of lifecylce of the custom home building process. Included managing relationship with customer, estimating cost of project and managing project ongoing.",
-    icon: React.createElement(ConstructionIcon),
-    date: "2017 - 2019",
-  },
-  {
-    title: "Technologist",
-    company: "The obo Group",
-    location: "Washington, DC/Remote",
-    description:
-      "Implemented and setup new Salesforce and HubSpot instances based on client requirements",
-    icon: React.createElement(NetworkIcon),
-    date: "2020 - 2020",
-  },
-  {
-    title: "Lead Consultant",
-    company: "The obo Group",
-    location: "Washington, DC/Remote",
-    description:
-      "Understood business processes and determined ways to leverage technology to better support and improve these processes and developed Python to integrate and migrate data between various endpoints",
-    icon: React.createElement(NetworkIcon),
-    date: "2020 - 2021",
-  },
-  {
-    title: "Senior Consultant",
-    company: "The obo Group",
-    location: "Washington, DC/Remote",
-    description:
-      "As a Senior Consultant, I specialized in creating robust, well-structured data pipelines using Python and building cloud infrastructure for data integrations across platforms like DigitalOcean, AWS, and Heroku. I not only implemented these architected solutions but also mentored team members in the development and execution of these designs.",
-    icon: React.createElement(NetworkIcon),
-    date: "2021 - 2022",
-  },
-  {
-    title: "Principal Consultant",
-    company: "The obo Group",
-    location: "Washington, DC/Remote",
-    description:
-      "In my role as Principal Consultant, I was the technical lead on large-scale system design and API/database integration projects, focusing on Salesforce and HubSpot platforms. I was involved in projects from inception to completion, which included pre-sales discovery, requirement gathering, technical scoping, implementation, and overseeing the engineering and implementation teams. My focus ensured the delivery of well-written Python code and soundly designed systems. I also was responsible for the development of a HubSpot marketplace app has generated over 1,000 leads to date.",
-    icon: React.createElement(NetworkIcon),
-    date: "2022 - 2023",
-  },
-  {
-    title: "Director of Technology",
-    company: "The obo Group",
-    location: "Washington, DC/Remote",
-    description:
-      "As the Director of Technology, I lead the technical implementation team responsible for major projects using platforms like HubSpot, Salesforce, and monday.com. Our team successfully delivers projects worth $1-2 million every quarter. I have pioneered the adoption of a new toolset that improved efficiency, cutting project times by up to 10%. Additionally, I developed an innovative application combining monday.com, Slack, OpenAI, and Langchain, which seamlessly integrates AI into business workflows. This app has notably reduced the time our sales team spends per client by approximately one hour.",
-    icon: React.createElement(NetworkIcon),
-    date: "2023 - Present",
+    title: "Strategy, not just tech",
+    body: "On the exec leadership team, helping set company direction and shaping our AI service offerings.",
+    ev: "Sustained YoY growth.",
   },
 ] as const;
 
-export const projectsData = [
+export const cases = [
   {
-    title: "YakBots",
-    description:
-      "App that allowed for users to upload documents in Monday, build chatbots based on those documents and then give access to the bot through a slack channel.",
-    tags: ["Monday.com", "Slack", "AWS", "Python", "Supabase", "OpenAI", "Langchain", "Pinecone"],
-    imageUrl: '/yakbots.png',
-    link: "https://github.com/reedwi/llm-app"
+    label: "If you're small",
+    body: 'It’s the last thing you should touch. A free CRM already does the job, and your time and your Claude credits belong in your actual product. Saving a few hundred dollars a month sounds great until the "quick two-hour build" turns into days of real work to make something secure that a spreadsheet wasn’t already handling.',
   },
   {
-    title: "ChatGPT for HubSpot",
-    description:
-      "When ChatGPT first came out, I built the first HubSpot marketplace app to allow basic access to ChatGPT from within HubSpot. This app currently has over 1k downloads.",
-    tags: ["Retool", "Python", "AWS", "Supabase", "OpenAI", "ChatGPT"],
-    imageUrl: '/chatgpt_hubspot.png',
-    link: "https://ecosystem.hubspot.com/marketplace/apps/sales/sales-enablement/the-obo-group-chatgpt-1398072"
-  },
-  {
-    title: "Advent of Code 2023",
-    description:
-      "Advent of code (adventofcode.com) is a set of problems, released each day in December. - In progress",
-    tags: ["Python", "Data Structures", "Algorithms"],
-    imageUrl: '/aoc.png',
-    link: "https://github.com/reedwi/advent-of-code-2023/tree/master"
-  },
-  {
-    title: "GPT from Scratch",
-    description:
-      "Working through the Karpathy lecture series to build micrograd and a GPT from scratch - In progress",
-    tags: ["Python", "AI", "Machine Learning"],
-    imageUrl: '/karpathy.png',
-    link: "https://github.com/reedwi/gpt-from-scratch"
-  },
-  {
-    title: "Proposal Up",
-    description:
-      "App that can take an Upwork job description and generate a proposal based on the user's skills - In progress",
-    tags: ["Next.js", "Supabase", "OpenAI", "Langchain"],
-    imageUrl: '/proposal_up.png',
-    link: "https://github.com/reedwi/proposal-up"
+    label: "If you're at scale",
+    body: "The money looks more real, mid five or six figures a year. But now security is the whole game. Your internal systems need to be SOC 2 compliant to satisfy your own customer contracts, and that license is a rounding error next to a breach and the lawsuit behind it. The math quietly flips back.",
   },
 ] as const;
 
-export const skillsData = [
-  "Leadership",
-  "Business Process Strategy",
-  "Python",
-  "Salesforce",
-  "HubSpot",
-  "Monday.com",
-  "LLMs",
-  "Data Engineering",
-  "SQL",
-  "Postgres",
-  "Next.js"
+export const proof = [
+  {
+    tag: "Startup · product",
+    strong: "Built a startup's Salesforce managed package.",
+    rest: "The installable product their customers add to sync platform data in and out of Salesforce. Their actual product, not an internal tool, and they've kept building on it since.",
+  },
+  {
+    tag: "In progress",
+    strong: "Architecting a move off a legacy system into Salesforce.",
+    rest: "Consulting-heavy discovery, then building the process to match. The switch saves multiple six figures a year in license costs, many times over the one-time build.",
+  },
 ] as const;
