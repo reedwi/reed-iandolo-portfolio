@@ -34,8 +34,8 @@ export default function Home() {
       <header className="hero">
         <span className="eyebrow">VP of Technology · Aptitude 8</span>
         <h1>
-          I lead how we <em>architect, sell, and deliver</em>, and how we put AI
-          to work doing all three better.
+          I shape how technology gets{" "}
+          <em>architected, sold, and delivered</em>.
         </h1>
         <p>
           I run the technology organization at Aptitude 8, a go-to-market systems
