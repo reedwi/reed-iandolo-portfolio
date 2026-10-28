@@ -16,7 +16,7 @@ export default function Work() {
       <SiteBar subtitle="Independent advisory" active="work" />
 
       <header className="hero wide">
-        <span className="eyebrow">For small teams buried in manual work</span>
+        <span className="eyebrow">Independent advisory</span>
         <h1>
           Get more out of the systems you have, then build the{" "}
           <em>10%</em> they can&apos;t.
