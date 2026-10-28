@@ -78,7 +78,7 @@ button:focus-visible {
 
 /* ---- top bar ---- */
 .bar { display: flex; align-items: center; justify-content: space-between; padding: 24px 0 0; gap: 12px; }
-.bar .brand { display: flex; align-items: center; gap: 12px; }
+.bar .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .avatar {
   width: 42px; height: 42px; border-radius: 50%;
   object-fit: cover; flex: none;
@@ -90,6 +90,7 @@ button:focus-visible {
 .bar .right { display: flex; align-items: center; gap: 14px; }
 .bar .avail { font-size: 12px; color: var(--dim); font-family: var(--mono); display: inline-flex; align-items: center; gap: 7px; }
 .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--pine-2); }
+.nav-link { font-size: 13px; text-decoration: none; color: var(--ink); border-bottom: 1.5px solid var(--pine); padding-bottom: 1px; white-space: nowrap; }
 
 .theme-toggle {
   width: 34px; height: 34px; flex: none;
@@ -107,6 +108,7 @@ button:focus-visible {
   font-weight: 640; margin: 18px 0 22px; text-wrap: balance; max-width: 17ch;
 }
 .hero h1 em { font-style: normal; color: var(--pine); }
+.hero.wide h1 { max-width: 21ch; }
 .hero p { font-size: 17.5px; color: var(--dim); max-width: 58ch; margin: 0 0 30px; }
 .cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .btn {
@@ -130,6 +132,18 @@ section.block { padding: 44px 0; border-top: 1px solid var(--line); }
 .cap b { font-size: 15.5px; display: block; margin-bottom: 6px; letter-spacing: -0.01em; }
 .cap p { margin: 0; font-size: 13.5px; color: var(--dim); line-height: 1.55; }
 .cap p .ev { color: var(--pine); }
+.cap .case-lbl { margin-bottom: 8px; }
+
+/* ---- work page: retainer tiers ---- */
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+.tier { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 6px; }
+.tier .tier-size { font-family: var(--mono); font-size: 11px; letter-spacing: 0.11em; text-transform: uppercase; color: var(--pine); }
+.tier b { font-size: 15.5px; letter-spacing: -0.01em; }
+.tier p { margin: 0 0 8px; font-size: 13.5px; color: var(--dim); line-height: 1.55; flex: 1; }
+.tier .price { font-size: 14.5px; font-weight: 600; }
+.tier .price span { font-weight: 400; font-size: 12.5px; color: var(--faint); }
+.fine { font-size: 13.5px; color: var(--faint); max-width: 60ch; margin: 18px 0 0; }
+.block-intro a { color: var(--pine); }
 
 /* ---- the 10% thesis ---- */
 .thesis { padding: 46px 0; border-top: 1px solid var(--line); }
@@ -177,7 +191,7 @@ footer.site { padding: 46px 0 60px; border-top: 1px solid var(--line); margin-to
 .foot-meta { margin-top: 22px; font-size: 12.5px; color: var(--faint); font-family: var(--mono); }
 
 @media (max-width: 600px) {
-  .caps, .proof, .cases { grid-template-columns: 1fr; }
+  .caps, .proof, .cases, .tiers { grid-template-columns: 1fr; }
   .bar .avail { display: none; }
   .split .s90 { padding-left: 10px; }
 }

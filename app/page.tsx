@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { ThemeToggle } from "@/components/theme-toggle";
+import Link from "next/link";
+import { SiteBar } from "@/components/site-bar";
 import { capabilities, cases, proof, contact } from "@/lib/data";
 
 const mailto = `mailto:${contact.email}?subject=Hello%20Reed`;
@@ -7,29 +7,10 @@ const mailto = `mailto:${contact.email}?subject=Hello%20Reed`;
 export default function Home() {
   return (
     <div className="wrap">
-      <div className="bar">
-        <div className="brand">
-          <Image
-            className="avatar"
-            src="/reed_headshot.png"
-            alt="Reed Iandolo"
-            width={84}
-            height={84}
-            quality={90}
-            priority
-          />
-          <div>
-            <b>Reed Iandolo</b>
-            <span>VP of Technology · Aptitude 8</span>
-          </div>
-        </div>
-        <div className="right">
-          <span className="avail">
-            <span className="pulse" /> Washington, DC · Remote
-          </span>
-          <ThemeToggle />
-        </div>
-      </div>
+      <SiteBar
+        subtitle="VP of Technology · Aptitude 8"
+        link={{ href: "/work", label: "Work with me" }}
+      />
 
       <header className="hero">
         <span className="eyebrow">VP of Technology · Aptitude 8</span>
@@ -155,9 +136,9 @@ export default function Home() {
             of the way and the last 10% is quietly costing you, that&apos;s exactly
             the conversation I want.
           </div>
-          <a className="btn" href={mailto}>
-            Let&apos;s talk →
-          </a>
+          <Link className="btn" href="/work">
+            Work with me →
+          </Link>
         </div>
       </section>
 
