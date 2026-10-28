@@ -69,15 +69,15 @@ export const proof = [
 ] as const;
 
 export const oldWay = [
+  "Hire more people to keep up with the busywork.",
   "Buy another tool, or rebuild from scratch.",
   "Months of discovery before anything changes.",
-  "One big plan that's stale by launch.",
 ] as const;
 
 export const newWay = [
+  "Automate the busywork so your team can do the real work.",
   "Get more from what you have. Build only what's missing.",
   "One conversation, then the work starts.",
-  "The most important fix first, then the next.",
 ] as const;
 
 export const steps = [
@@ -118,21 +118,21 @@ export const workProof = [
 
 export const tiers = [
   {
-    name: "Advise",
-    scope: "You build · I guide",
-    body: "I own the priority list and the roadmap, review designs, and answer questions as they come up.",
+    name: "Focus",
+    scope: "1 priority at a time",
+    body: "I work your list one priority at a time, from scoping to shipped, with a check-in every other week.",
     price: "$1,750",
   },
   {
-    name: "Build",
-    scope: "1 priority at a time",
-    body: "Everything in Advise, plus I do the work, one priority at a time, with a weekly check-in.",
+    name: "Momentum",
+    scope: "2 at a time",
+    body: "Two priorities moving in parallel, so the list moves faster. Weekly check-in.",
     price: "$3,500",
   },
   {
     name: "Lead",
     scope: "Up to 3 at a time",
-    body: "Everything in Build, with up to three priorities moving at once. I act as your technical lead.",
+    body: "Three priorities in parallel, and I act as your technical lead across roadmap, team and vendors.",
     price: "$6,500",
   },
 ] as const;
