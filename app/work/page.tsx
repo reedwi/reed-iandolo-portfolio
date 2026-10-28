@@ -90,7 +90,6 @@ export default function Work() {
       <section className="block">
         <div className="block-head">
           <h2>Ways to work together</h2>
-          <span className="note">monthly, no hourly billing</span>
         </div>
         <div className="tiers">
           {tiers.map((t) => (
