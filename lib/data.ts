@@ -120,13 +120,13 @@ export const tiers = [
   {
     name: "Focus",
     scope: "1 priority at a time",
-    body: "I work your list one priority at a time, from scoping to shipped, with a check-in every other week.",
+    body: "I work your list one priority at a time, from scoping to shipped.",
     price: "$1,750",
   },
   {
     name: "Momentum",
     scope: "2 at a time",
-    body: "Two priorities moving in parallel, so the list moves faster. Weekly check-in.",
+    body: "Two priorities moving in parallel, so the list moves faster.",
     price: "$3,500",
   },
   {

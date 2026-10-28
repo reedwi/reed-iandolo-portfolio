@@ -104,8 +104,9 @@ export default function Work() {
           ))}
         </div>
         <p className="fine">
-          Month to month after the first three months. Bigger one-off builds can
-          be scoped as fixed-fee projects.
+          Async by default: you get written updates as work ships, not more
+          meetings. Month to month after the first three months. Bigger one-off
+          builds can be scoped as fixed-fee projects.
         </p>
         <div className="invite">
           <div className="txt">
