@@ -4,10 +4,10 @@ import { ThemeToggle } from "@/components/theme-toggle";
 
 type SiteBarProps = {
   subtitle: string;
-  link: { href: string; label: string };
+  active: "about" | "work";
 };
 
-export function SiteBar({ subtitle, link }: SiteBarProps) {
+export function SiteBar({ subtitle, active }: SiteBarProps) {
   return (
     <div className="bar">
       <Link className="brand" href="/">
@@ -29,9 +29,15 @@ export function SiteBar({ subtitle, link }: SiteBarProps) {
         <span className="avail">
           <span className="pulse" /> Washington, DC · Remote
         </span>
-        <Link className="nav-link" href={link.href}>
-          {link.label}
-        </Link>
+        <nav className="nav" aria-label="Site">
+          <Link href="/" aria-current={active === "about" ? "page" : undefined}>
+            About
+          </Link>
+          <Link href="/work" aria-current={active === "work" ? "page" : undefined}>
+            <span className="full">Work with me</span>
+            <span className="short">Work</span>
+          </Link>
+        </nav>
         <ThemeToggle />
       </div>
     </div>

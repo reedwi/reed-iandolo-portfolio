@@ -68,78 +68,71 @@ export const proof = [
   },
 ] as const;
 
-export const problems = [
-  {
-    title: "Tools that don't talk",
-    body: "Someone re-keys the same data between systems every week, and the numbers still don't match.",
-  },
-  {
-    title: "Half-used platforms",
-    body: "You're paying for a platform your team only uses part of, and nobody's sure what it can really do.",
-  },
-  {
-    title: "A backlog nobody owns",
-    body: "The list of fixes keeps growing, and there's no one senior with the time to get to it.",
-  },
-  {
-    title: "The expensive answer",
-    body: "You've been told the fix is a six-figure add-on or a full rebuild.",
-  },
+export const oldWay = [
+  "Buy another tool, or rebuild from scratch.",
+  "Months of discovery before anything changes.",
+  "One big plan that's stale by launch.",
+] as const;
+
+export const newWay = [
+  "Get more from what you have. Build only what's missing.",
+  "One conversation, then the work starts.",
+  "The most important fix first, then the next.",
 ] as const;
 
 export const steps = [
   {
     n: "01",
-    title: "Understand",
-    body: "I start with the business: how work actually flows, where it breaks, and what that's costing you.",
+    title: "Talk",
+    body: "A 30-minute call about what's slowing you down. No prep needed on your end.",
   },
   {
     n: "02",
-    title: "Push the platform",
-    body: "Most teams use a fraction of what they already pay for. I take your core system as far as it can honestly go.",
+    title: "Embed",
+    body: "I get inside your systems and your team, and come back with a list of what's fixable and what each fix is worth.",
   },
   {
     n: "03",
-    title: "Build the 10%",
-    body: "Then I design and build what lives beyond it: integrations, automations, internal tools, sometimes an AI feature that couldn't exist before.",
+    title: "Prioritize",
+    body: "We rank the list together. It becomes the plan, and you can reorder it anytime.",
   },
   {
     n: "04",
-    title: "Support",
-    body: "I stay on as your fractional architect, so the system keeps up as the business changes.",
+    title: "Execute",
+    body: "I work the list from the top, and keep adding to it as the business changes.",
   },
 ] as const;
 
 export const workProof = [
   {
-    tag: "Startup · fractional",
-    strong: "Built the first version of a startup's Salesforce managed package.",
-    rest: "Came in as their fractional Salesforce architect to design and build the installable product their customers use to sync platform data in and out of Salesforce. It's their actual product, and they've kept building on it since.",
+    tag: "Nonprofit · ongoing",
+    strong: "Technical architect for a national workforce-training nonprofit.",
+    rest: "Getting far more out of the platform they already pay for, consolidating systems to save six figures a year in licensing, and finding new parts of the business it can take on.",
   },
   {
-    tag: "Nonprofit · ongoing",
-    strong: "Fractional Salesforce architect for a national workforce-training nonprofit.",
-    rest: "Since early 2025: keeping program and instructor data aligned across Salesforce, a case-management system and an LMS, and building a repeatable process for billing discrepancies. Now architecting a move off a legacy system into Salesforce that saves multiple six figures a year in licensing.",
+    tag: "Startup · fractional",
+    strong: "Built the first version of a startup's core product.",
+    rest: "The app their customers install to sync their data with Salesforce. They've kept building on it since.",
   },
 ] as const;
 
 export const tiers = [
   {
-    name: "Advisory",
-    size: "~1 day / month",
-    body: "A monthly roadmap session, async Q&A and design reviews. For teams with builders who need senior judgment.",
+    name: "Advise",
+    scope: "You build · I guide",
+    body: "I own the priority list and the roadmap, review designs, and answer questions as they come up.",
     price: "$1,750",
   },
   {
-    name: "Fractional Architect",
-    size: "~2 days / month",
-    body: "Everything in Advisory, plus hands-on build and a weekly working session.",
+    name: "Build",
+    scope: "1 priority at a time",
+    body: "Everything in Advise, plus I do the work, one priority at a time, with a weekly check-in.",
     price: "$3,500",
   },
   {
-    name: "Embedded",
-    size: "~4 days / month",
-    body: "Everything above, plus I own delivery end to end, with twice-weekly sessions.",
+    name: "Lead",
+    scope: "Up to 3 at a time",
+    body: "Everything in Build, with up to three priorities moving at once. I act as your technical lead.",
     price: "$6,500",
   },
 ] as const;

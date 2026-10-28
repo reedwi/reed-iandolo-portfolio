@@ -90,7 +90,17 @@ button:focus-visible {
 .bar .right { display: flex; align-items: center; gap: 14px; }
 .bar .avail { font-size: 12px; color: var(--dim); font-family: var(--mono); display: inline-flex; align-items: center; gap: 7px; }
 .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--pine-2); }
-.nav-link { font-size: 13px; text-decoration: none; color: var(--ink); border-bottom: 1.5px solid var(--pine); padding-bottom: 1px; white-space: nowrap; }
+.nav {
+  display: inline-flex; gap: 2px; padding: 2px;
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px;
+}
+.nav a {
+  font-size: 13px; text-decoration: none; color: var(--dim); white-space: nowrap;
+  padding: 6px 13px; border-radius: 999px; transition: color .15s ease, background .15s ease;
+}
+.nav a:hover { color: var(--ink); }
+.nav a[aria-current="page"] { background: var(--ink); color: var(--bg); }
+.nav .short { display: none; }
 
 .theme-toggle {
   width: 34px; height: 34px; flex: none;
@@ -143,7 +153,16 @@ section.block { padding: 44px 0; border-top: 1px solid var(--line); }
 .tier .price { font-size: 14.5px; font-weight: 600; }
 .tier .price span { font-weight: 400; font-size: 12.5px; color: var(--faint); }
 .fine { font-size: 13.5px; color: var(--faint); max-width: 60ch; margin: 18px 0 0; }
-.block-intro a { color: var(--pine); }
+
+/* ---- work page: old way vs. how I work ---- */
+.vs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.vs > div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+.vs .then .case-lbl { color: var(--faint); }
+.vs .now { background: var(--surface-2); border-color: var(--pine); }
+.vs ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.vs li { font-size: 14.5px; color: var(--dim); line-height: 1.5; }
+.vs .then li { text-decoration: line-through; text-decoration-color: var(--line-strong); }
+.vs .now li { color: var(--ink); }
 
 /* ---- the 10% thesis ---- */
 .thesis { padding: 46px 0; border-top: 1px solid var(--line); }
@@ -191,7 +210,10 @@ footer.site { padding: 46px 0 60px; border-top: 1px solid var(--line); margin-to
 .foot-meta { margin-top: 22px; font-size: 12.5px; color: var(--faint); font-family: var(--mono); }
 
 @media (max-width: 600px) {
-  .caps, .proof, .cases, .tiers { grid-template-columns: 1fr; }
+  .caps, .proof, .cases, .tiers, .vs { grid-template-columns: 1fr; }
+  .bar .brand span { display: none; }
+  .nav .full { display: none; }
+  .nav .short { display: inline; }
   .bar .avail { display: none; }
   .split .s90 { padding-left: 10px; }
 }

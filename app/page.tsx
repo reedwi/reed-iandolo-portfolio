@@ -7,10 +7,7 @@ const mailto = `mailto:${contact.email}?subject=Hello%20Reed`;
 export default function Home() {
   return (
     <div className="wrap">
-      <SiteBar
-        subtitle="VP of Technology · Aptitude 8"
-        link={{ href: "/work", label: "Work with me" }}
-      />
+      <SiteBar subtitle="VP of Technology · Aptitude 8" active="about" />
 
       <header className="hero">
         <span className="eyebrow">VP of Technology · Aptitude 8</span>
