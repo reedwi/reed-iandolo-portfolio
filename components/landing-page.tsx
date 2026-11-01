@@ -1,8 +1,7 @@
 import Link from "next/link";
 import type { Landing } from "@/lib/landings";
-import { bookingHref, bookingLinkProps, contact, steps, tiers, workProof } from "@/lib/data";
-
-const mailto = `mailto:${contact.email}?subject=Hello%20Reed`;
+import { SiteFooter } from "@/components/site-footer";
+import { bookingHref, bookingLinkProps, steps, tiers, workProof } from "@/lib/data";
 
 export function LandingPage({ page }: { page: Landing }) {
   const proof = page.proofIds
@@ -120,21 +119,7 @@ export function LandingPage({ page }: { page: Landing }) {
         </div>
       </section>
 
-      <footer className="site">
-        <div className="foot-links">
-          <a href={mailto}>Email</a>
-          <a href={contact.linkedin} target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          <a href={contact.github} target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <a href={contact.substack} target="_blank" rel="noreferrer">
-            Substack
-          </a>
-        </div>
-        <div className="foot-meta">Reed Iandolo · © 2026</div>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

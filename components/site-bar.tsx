@@ -16,6 +16,7 @@ const links = [
     // audience landing pages sit under "Work with me"
     match: ["/work", "/salesforce", "/law-firms", "/small-business"],
   },
+  { href: "/notes", full: "Notes", short: "Notes", subtitle: "Notes", match: ["/notes"] },
 ] as const;
 
 // Lives in the root layout so it persists across routes; that persistence is
