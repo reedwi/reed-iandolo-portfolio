@@ -6,6 +6,8 @@ audience: salesforce
 draft: false
 ---
 
+**The short version:** when a nonprofit's board numbers come from a spreadsheet, the reports usually aren't the problem. Either the data never makes it into Salesforce because the system is hard to use, or it's scattered across too many tools. Start with the one number leadership needs most, and work backward until Salesforce can answer it on its own.
+
 It's the week before the board meeting. Someone exports a handful of Salesforce reports, pastes them into a spreadsheet, fixes what looks wrong, and sends a number that doesn't quite match what finance has. Everyone knows the process is shaky. Nobody has time to fix it.
 
 Data is only one part of making a decision. But when you have no data you trust, you lose a big part of your leverage. You end up debating whose number is right instead of what to do about it.

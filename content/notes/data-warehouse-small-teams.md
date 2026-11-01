@@ -6,6 +6,8 @@ audience: general
 draft: false
 ---
 
+**The short version:** yes, a small organization can have its own data warehouse now. Tools like Fivetran, or a little custom code, can move data from systems like Salesforce into a Postgres database in a day, and a typical small setup costs under $50 a month. You don't need Snowflake or Databricks, and you get one place to power reporting, AI, and integrations.
+
 For a long time, a data warehouse was a big-company thing. It took a lot of effort and a lot of strategy, and it could easily turn into a project that ran for months or years. Plenty of them still ended up not set up well. If you were a nonprofit, a small firm, or a growing business, it wasn't really on the table.
 
 That's changed, and I don't think most smaller organizations realize how much.
