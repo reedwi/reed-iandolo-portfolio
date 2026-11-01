@@ -5,7 +5,7 @@ export const contact = {
   substack:
     "https://substack.com/@riandolo?r=1mjadv&utm_campaign=profile&utm_medium=profile-page",
   resume: "/reed_iandolo_resume.pdf",
-  booking: "https://calendar.app.google/fTPevRBRvvrGrM2n7", // Google Calendar appointment schedule; falls back to email if emptied
+  booking: "https://calendar.app.google/SmB2Pa2xJKjEXGg79", // Google Calendar appointment schedule; falls back to email if emptied
 } as const;
 
 export const bookingHref =
