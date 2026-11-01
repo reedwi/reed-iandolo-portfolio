@@ -97,6 +97,11 @@ export const workProof = [
     rest: "Moving them off a legacy system into Salesforce, which saves multiple six figures a year in licensing, many times over the one-time build. Along the way, getting far more out of the platform and finding new parts of the business it can take on.",
   },
   {
+    tag: "Law firm · ongoing",
+    strong: "Building intake software for a small law firm, inside the tools they already use.",
+    rest: "It works directly in their Outlook and their files, so there's no new app to adopt and nothing pulling them out of how they like to work. The tech fits their workflow, not the other way around.",
+  },
+  {
     tag: "Startup · fractional",
     strong: "Built the first version of a startup's core product.",
     rest: "The app their customers install to sync their data with Salesforce. They've kept building on it since.",
