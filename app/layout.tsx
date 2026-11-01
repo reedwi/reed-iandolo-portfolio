@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Hanken_Grotesk } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from "@/components/theme-provider"
+import { SiteBar } from "@/components/site-bar"
 import { Analytics } from '@vercel/analytics/react';
 
 const sans = Hanken_Grotesk({
@@ -30,6 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SiteBar />
           {children}
           <Analytics />
         </ThemeProvider>

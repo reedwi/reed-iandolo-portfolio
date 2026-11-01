@@ -55,19 +55,6 @@ export const cases = [
   },
 ] as const;
 
-export const proof = [
-  {
-    tag: "Startup · product",
-    strong: "Built a startup's Salesforce managed package.",
-    rest: "The installable product their customers add to sync platform data in and out of Salesforce. Their actual product, not an internal tool, and they've kept building on it since.",
-  },
-  {
-    tag: "In progress",
-    strong: "Architecting a move off a legacy system into Salesforce.",
-    rest: "Consulting-heavy discovery, then building the process to match. The switch saves multiple six figures a year in license costs, many times over the one-time build.",
-  },
-] as const;
-
 export const oldWay = [
   "Hire more people to keep up with the busywork.",
   "Buy another tool, or rebuild from scratch.",
@@ -107,7 +94,7 @@ export const workProof = [
   {
     tag: "Nonprofit · ongoing",
     strong: "Technical architect for a national workforce-training nonprofit.",
-    rest: "Getting far more out of the platform they already pay for, consolidating systems to save six figures a year in licensing, and finding new parts of the business it can take on.",
+    rest: "Moving them off a legacy system into Salesforce, which saves multiple six figures a year in licensing, many times over the one-time build. Along the way, getting far more out of the platform and finding new parts of the business it can take on.",
   },
   {
     tag: "Startup · fractional",

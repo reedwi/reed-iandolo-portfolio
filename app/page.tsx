@@ -1,14 +1,12 @@
 import Link from "next/link";
-import { SiteBar } from "@/components/site-bar";
-import { capabilities, cases, proof, contact } from "@/lib/data";
+import { SplitBar } from "@/components/split-bar";
+import { capabilities, cases, contact } from "@/lib/data";
 
 const mailto = `mailto:${contact.email}?subject=Hello%20Reed`;
 
 export default function Home() {
   return (
     <div className="wrap">
-      <SiteBar subtitle="VP of Technology · Aptitude 8" active="about" />
-
       <header className="hero">
         <span className="eyebrow">VP of Technology · Aptitude 8</span>
         <h1>
@@ -27,18 +25,12 @@ export default function Home() {
           <a className="btn" href={mailto}>
             Get in touch
           </a>
-          <a className="btn ghost" href={contact.github} target="_blank" rel="noreferrer">
-            GitHub
-          </a>
-          <a className="btn ghost" href={contact.linkedin} target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-          <a className="btn ghost" href={contact.substack} target="_blank" rel="noreferrer">
-            Substack
-          </a>
-          <a className="btn ghost" href={contact.resume} target="_blank" rel="noreferrer">
-            Resume
-          </a>
+          <nav className="hero-links" aria-label="Elsewhere">
+            <a href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href={contact.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a href={contact.substack} target="_blank" rel="noreferrer">Substack</a>
+            <a href={contact.resume} target="_blank" rel="noreferrer">Resume</a>
+          </nav>
         </div>
       </header>
 
@@ -107,25 +99,7 @@ export default function Home() {
           sometimes software that finally got cheap enough to be worth it.
         </p>
 
-        <div className="split">
-          <div className="s90">90%</div>
-          <div className="s10">10%</div>
-        </div>
-        <div className="split-legend">
-          <span className="l">what the core system already does well</span>
-          <span className="r">the part I build ↑</span>
-        </div>
-
-        <div className="proof">
-          {proof.map((p) => (
-            <div className="pf" key={p.tag}>
-              <div className="tag">{p.tag}</div>
-              <p>
-                <b>{p.strong}</b> {p.rest}
-              </p>
-            </div>
-          ))}
-        </div>
+        <SplitBar />
 
         <div className="invite">
           <div className="txt">

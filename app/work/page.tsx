@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { SiteBar } from "@/components/site-bar";
 import { bookingHref, contact, newWay, oldWay, steps, tiers, workProof } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -13,8 +12,6 @@ const mailto = `mailto:${contact.email}?subject=Hello%20Reed`;
 export default function Work() {
   return (
     <div className="wrap">
-      <SiteBar subtitle="Independent advisory" active="work" />
-
       <header className="hero wide">
         <span className="eyebrow">Independent advisory</span>
         <h1>
@@ -35,7 +32,7 @@ export default function Work() {
         </div>
       </header>
 
-      <section className="block">
+      <section className="block flush">
         <div className="vs">
           <div className="then">
             <div className="case-lbl">The old way</div>
@@ -75,7 +72,7 @@ export default function Work() {
         <div className="block-head">
           <h2>Recent work</h2>
         </div>
-        <div className="proof">
+        <div className="proof log">
           {workProof.map((p) => (
             <div className="pf" key={p.tag}>
               <div className="tag">{p.tag}</div>
