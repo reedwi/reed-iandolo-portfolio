@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Work with Reed Iandolo | Independent advisory",
   description:
     "Reed Iandolo helps teams get more out of the systems they already have, then builds the 10% those systems can't do.",
+  alternates: { canonical: "/work" },
 };
 
 export default function Work() {

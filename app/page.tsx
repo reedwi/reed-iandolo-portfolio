@@ -1,12 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd, personJsonLd } from "@/lib/site";
 import { SplitBar } from "@/components/split-bar";
 import { capabilities, cases, contact } from "@/lib/data";
 
 const mailto = `mailto:${contact.email}?subject=Hello%20Reed`;
 
+export const metadata: Metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   return (
     <div className="wrap">
+      <JsonLd data={personJsonLd} />
       <header className="hero">
         <span className="eyebrow">VP of Technology · Aptitude 8</span>
         <h1>

@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { bookingHref, bookingLinkProps } from "@/lib/data";
 import { landingList } from "@/lib/landings";
 import { formatDate, getNote, getNotes } from "@/lib/notes";
+import { JsonLd, SITE_URL, personJsonLd } from "@/lib/site";
 
 type Props = { params: { slug: string } };
 
@@ -15,7 +16,19 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const note = getNote(params.slug);
   if (!note) return {};
-  return { title: `${note.title} | Reed Iandolo`, description: note.summary };
+  return {
+    title: `${note.title} | Reed Iandolo`,
+    description: note.summary,
+    alternates: { canonical: `/notes/${note.slug}` },
+    openGraph: {
+      type: "article",
+      title: note.title,
+      description: note.summary,
+      url: `/notes/${note.slug}`,
+      publishedTime: note.date || undefined,
+      authors: ["Reed Iandolo"],
+    },
+  };
 }
 
 export default function NotePage({ params }: Props) {
@@ -25,6 +38,18 @@ export default function NotePage({ params }: Props) {
 
   return (
     <div className="wrap">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: note.title,
+          description: note.summary,
+          datePublished: note.date || undefined,
+          url: `${SITE_URL}/notes/${note.slug}`,
+          author: { ...personJsonLd, "@context": undefined },
+          publisher: { "@type": "Person", name: "Reed Iandolo", url: SITE_URL },
+        }}
+      />
       <article>
         <header className="hero note-hero">
           <Link className="eyebrow" href="/notes">

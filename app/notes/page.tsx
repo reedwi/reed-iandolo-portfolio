@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Notes | Reed Iandolo",
   description:
     "Practical notes on Salesforce, data, and fitting technology to how a business actually works.",
+  alternates: { canonical: "/notes" },
 };
 
 export default function Notes() {
