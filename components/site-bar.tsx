@@ -7,8 +7,15 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const links = [
-  { href: "/", full: "About", short: "About", subtitle: "VP of Technology · Aptitude 8" },
-  { href: "/work", full: "Work with me", short: "Work", subtitle: "Independent advisory" },
+  { href: "/", full: "About", short: "About", subtitle: "VP of Technology · Aptitude 8", match: ["/"] },
+  {
+    href: "/work",
+    full: "Work with me",
+    short: "Work",
+    subtitle: "Independent advisory",
+    // audience landing pages sit under "Work with me"
+    match: ["/work", "/salesforce", "/law-firms", "/small-business"],
+  },
 ] as const;
 
 // Lives in the root layout so it persists across routes; that persistence is
@@ -17,7 +24,9 @@ export function SiteBar() {
   const pathname = usePathname();
   const activeIndex = Math.max(
     0,
-    links.findIndex((l) => (l.href === "/" ? pathname === "/" : pathname.startsWith(l.href)))
+    links.findIndex((l) =>
+      l.match.some((m) => (m === "/" ? pathname === "/" : pathname.startsWith(m)))
+    )
   );
   const active = links[activeIndex];
 

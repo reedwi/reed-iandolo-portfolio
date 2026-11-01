@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { bookingHref, contact, newWay, oldWay, steps, tiers, workProof } from "@/lib/data";
+import Link from "next/link";
+import { landingList } from "@/lib/landings";
+import { bookingHref, bookingLinkProps, contact, newWay, oldWay, steps, tiers, workProof } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Work with Reed Iandolo | Independent advisory",
@@ -23,7 +25,7 @@ export default function Work() {
           I pinpoint what&apos;s slowing you down, then fix it, fast.
         </p>
         <div className="cta-row">
-          <a className="btn" href={bookingHref}>
+          <a className="btn" href={bookingHref} {...bookingLinkProps}>
             Book a 30-minute call
           </a>
           <a className="btn ghost" href="#how">
@@ -74,7 +76,7 @@ export default function Work() {
         </div>
         <div className="proof log">
           {workProof.map((p) => (
-            <div className="pf" key={p.tag}>
+            <div className="pf" key={p.id}>
               <div className="tag">{p.tag}</div>
               <p>
                 <b>{p.strong}</b> {p.rest}
@@ -85,6 +87,21 @@ export default function Work() {
       </section>
 
       <section className="block">
+        <div className="block-head">
+          <h2>Who I work with</h2>
+        </div>
+        <div className="audiences">
+          {landingList.map((l) => (
+            <Link className="aud" href={`/${l.slug}`} key={l.slug}>
+              <b>{l.nav}</b>
+              <span>{l.blurb}</span>
+              <i aria-hidden>→</i>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="block" id="ways">
         <div className="block-head">
           <h2>Ways to work together</h2>
         </div>
@@ -109,7 +126,7 @@ export default function Work() {
           <div className="txt">
             <b>Not sure where to start?</b> That&apos;s what the first call is for.
           </div>
-          <a className="btn" href={bookingHref}>
+          <a className="btn" href={bookingHref} {...bookingLinkProps}>
             Book a call →
           </a>
         </div>

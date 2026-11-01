@@ -5,11 +5,16 @@ export const contact = {
   substack:
     "https://substack.com/@riandolo?r=1mjadv&utm_campaign=profile&utm_medium=profile-page",
   resume: "/reed_iandolo_resume.pdf",
-  booking: "", // Calendly / Cal.com link; falls back to email until set
+  booking: "https://calendar.app.google/fTPevRBRvvrGrM2n7", // Google Calendar appointment schedule; falls back to email if emptied
 } as const;
 
 export const bookingHref =
   contact.booking || `mailto:${contact.email}?subject=Intro%20call`;
+
+// The booking page is an outside site, so open it in a new tab like other external links.
+export const bookingLinkProps = contact.booking
+  ? ({ target: "_blank", rel: "noreferrer" } as const)
+  : {};
 
 export const capabilities = [
   {
@@ -92,16 +97,19 @@ export const steps = [
 
 export const workProof = [
   {
+    id: "nonprofit",
     tag: "Nonprofit · ongoing",
     strong: "Technical architect for a national workforce-training nonprofit.",
     rest: "Moving them off a legacy system into Salesforce, which saves multiple six figures a year in licensing, many times over the one-time build. Along the way, getting far more out of the platform and finding new parts of the business it can take on.",
   },
   {
+    id: "lawfirm",
     tag: "Law firm · ongoing",
     strong: "Building intake software for a small law firm, inside the tools they already use.",
     rest: "It works directly in their Outlook and their files, so there's no new app to adopt and nothing pulling them out of how they like to work. The tech fits their workflow, not the other way around.",
   },
   {
+    id: "startup",
     tag: "Startup · fractional",
     strong: "Built the first version of a startup's core product.",
     rest: "The app their customers install to sync their data with Salesforce. They've kept building on it since.",
