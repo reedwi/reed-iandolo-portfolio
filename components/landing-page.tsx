@@ -1,9 +1,12 @@
 import Link from "next/link";
 import type { Landing } from "@/lib/landings";
 import { SiteFooter } from "@/components/site-footer";
+import { NoteList } from "@/components/note-list";
+import { getNotes } from "@/lib/notes";
 import { bookingHref, bookingLinkProps, steps, tiers, workProof } from "@/lib/data";
 
 export function LandingPage({ page }: { page: Landing }) {
+  const related = getNotes().filter((n) => n.audience === page.slug);
   const proof = page.proofIds
     .map((id) => workProof.find((p) => p.id === id))
     .filter((p): p is (typeof workProof)[number] => Boolean(p));
@@ -87,6 +90,15 @@ export function LandingPage({ page }: { page: Landing }) {
           </div>
         ) : null}
       </section>
+
+      {related.length ? (
+        <section className="block">
+          <div className="block-head">
+            <h2>Related reading</h2>
+          </div>
+          <NoteList notes={related} />
+        </section>
+      ) : null}
 
       <section className="block" id="how">
         <div className="block-head">

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { NoteList } from "@/components/note-list";
 import { SiteFooter } from "@/components/site-footer";
-import { formatDate, getNotes } from "@/lib/notes";
+import { getNotes, type Audience } from "@/lib/notes";
 
 export const metadata: Metadata = {
   title: "Notes | Reed Iandolo",
@@ -10,8 +10,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/notes" },
 };
 
+const GROUPS: { audience: Audience; heading: string }[] = [
+  { audience: "general", heading: "Start here" },
+  { audience: "salesforce", heading: "Nonprofits & associations on Salesforce" },
+  { audience: "law-firms", heading: "Small law firms" },
+  { audience: "small-business", heading: "Owners and small teams" },
+];
+
 export default function Notes() {
   const notes = getNotes();
+  const groups = GROUPS.map((g) => ({ ...g, notes: notes.filter((n) => n.audience === g.audience) })).filter(
+    (g) => g.notes.length
+  );
+
   return (
     <div className="wrap">
       <header className="hero">
@@ -25,27 +36,20 @@ export default function Notes() {
         </p>
       </header>
 
-      <section className="block flush">
-        {notes.length ? (
-          <div className="audiences">
-            {notes.map((n) => (
-              <Link className="aud" href={`/notes/${n.slug}`} key={n.slug}>
-                <b>
-                  {n.title}
-                  {n.draft ? <span className="draft-tag">Draft</span> : null}
-                </b>
-                <span>
-                  {n.summary}
-                  {n.date ? <span className="note-date"> · {formatDate(n.date)}</span> : null}
-                </span>
-                <i aria-hidden>→</i>
-              </Link>
-            ))}
-          </div>
-        ) : (
+      {groups.length ? (
+        groups.map((g, i) => (
+          <section className={i === 0 ? "block flush" : "block"} key={g.audience}>
+            <div className="block-head">
+              <h2>{g.heading}</h2>
+            </div>
+            <NoteList notes={g.notes} />
+          </section>
+        ))
+      ) : (
+        <section className="block flush">
           <p className="block-intro">The first notes are on the way.</p>
-        )}
-      </section>
+        </section>
+      )}
 
       <SiteFooter />
     </div>

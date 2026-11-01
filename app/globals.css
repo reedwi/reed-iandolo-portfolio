@@ -193,7 +193,6 @@ section.block.flush { border-top: 0; padding-top: 8px; }
   display: grid; grid-template-columns: 1fr auto; gap: 4px 20px; align-items: center;
   padding: 18px 0; border-top: 1px solid var(--line); text-decoration: none;
 }
-.aud:last-child { border-bottom: 1px solid var(--line); }
 .aud b { font-size: 15.5px; letter-spacing: -0.01em; transition: color .15s ease; }
 .aud span { grid-column: 1; font-size: 13.5px; color: var(--dim); }
 .aud i {
